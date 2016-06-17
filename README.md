@@ -1,2 +1,2 @@
 # lenden
-Second Hand Shopping Platform
+An Intra Group Shopping Platform
