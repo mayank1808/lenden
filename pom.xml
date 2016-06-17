@@ -14,7 +14,6 @@
 		<module>lenden-catalog</module>
 		<module>lenden-base</module>
 		<module>lenden-dao</module>
-		<module>lenden-health-check</module>
 	</modules>
 	<build>
 		<plugins>
