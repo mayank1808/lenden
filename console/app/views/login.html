@@ -1,0 +1,23 @@
+<div class="loginContainer">
+    <div data-ng-show="loading">
+        <div data-ng-include="'/components/overlay.html'"></div>
+    </div>
+    <div data-ng-include="'/components/messageContainer.html'"></div>
+    <form class="loginform whitebx" name="loginForm" data-ng-submit="loginForm.$valid && !loginForm.$invalid && onSubmit($event)" novalidate>
+        <h3>Login</h3>
+        <div class="form-group">
+            <input type="text" placeholder="User Name" data-ng-pattern="/^[a-z0-9\.]+@[a-z0-9.]+$/" data-ng-model="loginRequest.emailId" class="inputfield input-orange inputanimate" name="emailId" required>
+            <div class="errorContainer" data-ng-if="loginForm.emailId.$invalid && (loginForm.$submitted || loginForm.emailId.$touched)">
+                <div class="errorText" data-ng-if="loginForm.emailId.$error.required">User Name is mandatory</div>
+                <div class="errorText" data-ng-if="loginForm.emailId.$error.pattern">User name should be a valid email Id</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="password" placeholder="Password" data-ng-model="loginRequest.password" value="" class="inputfield input-orange inputanimate" name="password" required>
+            <div class="errorContainer" data-ng-if="loginForm.password.$invalid && (loginForm.$submitted || loginForm.password.$touched)">
+                <div class="errorText" data-ng-if="loginForm.password.$error.required">Password is mandatory</div>
+            </div>
+        </div>
+        <input type="submit" class="btn btn_submit" value="Login" />
+    </form>
+</div>

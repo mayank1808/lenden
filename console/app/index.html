@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Lenden Web</title>
-		
+		<title>Lenden</title>
+		<link rel="icon" type="image/ico" href="./images/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="./css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/sb-admin-2.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/timeline.css"/>
+		<script type="text/javascript" src="./js/lib/chat.js"></script>
+		<script type="text/javascript" src="./js/lib/header-notification.js"></script>
+		<script type="text/javascript" src="./js/lib/header.js"></script>
+		<script type="text/javascript" src="./js/lib/notification.js"></script>
+		<script type="text/javascript" src="./js/lib/sb-admin-2.js"></script>
+		<script type="text/javascript" src="./js/lib/sidebar-search.js"></script>
+		<script type="text/javascript" src="./js/lib/sidebar.js"></script>
+		<script type="text/javascript" src="./js/lib/stats.js"></script>
+		<script type="text/javascript" src="./js/lib/timeline.js"></script>
+		<script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/lib/jquery-ui.js"></script>
+		<script type="text/javascript" src="./js/lib/jquery.nanoscroller.js"></script>
+		<script type="text/javascript" src="./js/lib/jquery.stylish-select.js"></script>
+		<script type="text/javascript" src="./js/lib/jquery.nouislider.all.js"></script>
+		<script type="text/javascript" src="./js/lib/isotope.js"></script>
+		<script type="text/javascript" src="./js/lib/bootstrap-tooltip.js"></script>
+		<script type="text/javascript" src="./js/lib/bootstrap-popover.js"></script>
+		<script type="text/javascript" src="./js/lib/classie.js"></script>
+		<script type="text/javascript" src="./js/lib/easyPieChart.js"></script>
+		<script type="text/javascript" src="./js/lib/owl.carousel.js"></script>
+		<script type="text/javascript" src="./js/lib/script.js"></script>
+		<script type="text/javascript" src="./js/bundle.js"></script>
+		<script type="text/javascript" src="./templateCacheViews.js"></script>
+		<script type="text/javascript" src="./templateCacheComponents.js"></script>
 	</head>
 	<body>
-		<h1>Landing Page</p>
+		<div class="moduleContainer" data-ng-modules='["ecoSystemMonitor"]'>
+			<div data-ng-controller="mainController">
+				<div data-ng-include="'/components/header.html'"></div>
+				<div data-ng-include="'/components/navigation.html'"></div>
+				<!-- Main Page Container -->
+				<div class="container">
+					<div data-ng-view="">
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

@@ -16,19 +16,19 @@ Deployment Instructions:
 
 3. Go to admin console app folder and install remaining dependencies using
 	
-	cd /lenden-web/console/app
+	cd /sd_eco_alerts/console/app
 	npm install
 
 4. Run gulp, this will clean maven project and compile app source code
 	
-	cd /lenden-web/console/app
+	cd /sd_eco_alerts/console/app
 	--Execute anyone of the below Development Commands (either 1 or 2)
 
 5. Generate war using mvn command at admin console folder
-	cd /lenden-web/console
+	cd /sd_eco_alerts/console
 	mvn clean install
 	
-NOTE: The war will be generated in /lenden-web/console/target as ROOT.war
+NOTE: The war will be generated in /sd_eco_alerts/console/target as ROOT.war
 
 
 ---------- Development Commands ---------------

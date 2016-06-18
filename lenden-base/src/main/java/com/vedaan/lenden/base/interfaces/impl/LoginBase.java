@@ -40,7 +40,7 @@ public class LoginBase implements ILoginBase {
 		GenericResponse response=null;
 		if(userEO!=null){
 			response=new GenericResponse();
-			response.setCode("200");
+			response.setCode(200);
 			response.setMessage("User Registered Successfully");
 		}
 		LOGGER.info("Exiting registerUser at {}", System.currentTimeMillis());

@@ -12,8 +12,11 @@ import com.vedaan.lenden.catalog.enums.CommunityType;
 public class Community {
 
 	private String communityName;
+
 	private CommunityType type;
+
 	private String city;
+
 	private String state;
 
 	public String getCommunityName() {
