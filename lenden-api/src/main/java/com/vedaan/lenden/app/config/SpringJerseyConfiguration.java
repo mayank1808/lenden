@@ -37,7 +37,7 @@ import com.wordnik.swagger.reader.ClassReaders;
 
 public class SpringJerseyConfiguration extends ResourceConfig {
 
-	private static final String PACKAGES_TO_SCAN_FOR_APIS = "com.vedaan.lenden";
+	private static final String PACKAGES_TO_SCAN_FOR_APIS = "com.vedaan.lenden.app.endpoint";
 	private static final String API_VERSION = "1.0";
 
 	// Register all required properties and class

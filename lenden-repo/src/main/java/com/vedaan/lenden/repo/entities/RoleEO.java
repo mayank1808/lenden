@@ -17,14 +17,14 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "lenden_user_role")
+@Table(name = "role")
 public class RoleEO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "PK", unique = true, nullable = false)
+	@Column(name = "pk", unique = true, nullable = false)
 	private int pk;
 
 	@Column(name = "role", length = 255, nullable = false)
