@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.vedaan.snapdeal.dao.interfaces.impl;
+package com.vedaan.lenden.dao.interfaces.impl;
 
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import com.vedaan.lenden.repo.entities.UserEO;
  * @author mayank
  *
  */
-@Service
+@Service("loginDao")
 public class LoginDao extends GenericDao<UserEO> implements ILoginDao {
 
 }

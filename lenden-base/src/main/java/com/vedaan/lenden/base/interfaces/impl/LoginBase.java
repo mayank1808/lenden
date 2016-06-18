@@ -6,6 +6,7 @@ package com.vedaan.lenden.base.interfaces.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.vedaan.lenden.base.converter.interfaces.IObjectConverter;
@@ -19,12 +20,13 @@ import com.vedaan.lenden.repo.entities.UserEO;
  * @author mayank
  *
  */
-@Service
+@Service("loginBase")
 public class LoginBase implements ILoginBase {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoginBase.class);
 
 	@Autowired
+	@Qualifier("loginDao")
 	ILoginDao loginDao;
 	
 	@Autowired

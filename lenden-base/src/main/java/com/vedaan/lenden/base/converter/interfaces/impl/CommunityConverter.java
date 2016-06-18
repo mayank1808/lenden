@@ -39,7 +39,7 @@ public class CommunityConverter implements IObjectConverter<Community, Community
 		communityEO.setCommunityName(bo.getCommunityName());
 		communityEO.setType(bo.getType());
 		communityEO.setCity(bo.getCity());
-		communityEO.setType(bo.getType());
+		communityEO.setState(bo.getState());
 		LOGGER.info("Exiting convertBOToEO at {}", System.currentTimeMillis());
 		return communityEO;
 	}
