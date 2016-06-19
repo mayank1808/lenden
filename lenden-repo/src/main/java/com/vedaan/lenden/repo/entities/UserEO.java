@@ -47,6 +47,9 @@ public class UserEO implements Serializable {
 	@Column(name = "emailId", length = 55, nullable = false)
 	private String emailId;
 
+	@Column(name = "password", length = 55, nullable = false)
+	private String password;
+
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "mapping_user_community", joinColumns = @JoinColumn(name = "user_id") , inverseJoinColumns = @JoinColumn(name = "community_id") )
 	private List<CommunityEO> communities;
@@ -141,6 +144,14 @@ public class UserEO implements Serializable {
 
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

@@ -17,8 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import com.vedaan.lenden.base.interfaces.ILoginBase;
+import com.vedaan.lenden.app.service.ILoginService;
 import com.vedaan.lenden.model.bo.User;
+import com.vedaan.lenden.model.request.LoginRequest;
 import com.vedaan.lenden.model.response.GenericResponse;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
@@ -39,7 +40,7 @@ public class LoginController {
 
 	@Autowired
 	@Qualifier("loginService")
-	ILoginBase loginService;
+	ILoginService loginService;
 
 	@POST
 	@Path("/user/register")
@@ -51,6 +52,20 @@ public class LoginController {
 	public Response registerUser(@Valid User registerRequest) throws Exception {
 		LOGGER.info("Entering registerUser at {}", System.currentTimeMillis());
 		GenericResponse genericResponse = loginService.registerUser(registerRequest);
+		Response response = STATUS_OK.entity(genericResponse).build();
+		return response;
+	}
+
+	@POST
+	@Path("/user/login")
+	@Produces({ javax.ws.rs.core.MediaType.APPLICATION_JSON })
+	@Consumes({ javax.ws.rs.core.MediaType.APPLICATION_JSON })
+	@ApiOperation(value = "Login a user", response = GenericResponse.class)
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Login successfully", response = GenericResponse.class) })
+	public Response loginUser(@Valid LoginRequest loginRequest) throws Exception {
+		LOGGER.info("Entering registerUser at {}", System.currentTimeMillis());
+		GenericResponse genericResponse = loginService.loginUser(loginRequest);
 		Response response = STATUS_OK.entity(genericResponse).build();
 		return response;
 	}

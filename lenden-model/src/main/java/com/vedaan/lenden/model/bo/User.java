@@ -17,6 +17,7 @@ public class User {
 	private String lastName;
 	private String contact;
 	private String emailId;
+	private String password;
 	private List<Community> communities;
 	private String address;
 	private String city;
@@ -93,6 +94,14 @@ public class User {
 
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

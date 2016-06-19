@@ -3,6 +3,7 @@
  */
 package com.vedaan.lenden.base.converter.interfaces.impl;
 
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import com.vedaan.lenden.base.converter.interfaces.IObjectConverter;
 import com.vedaan.lenden.model.bo.Community;
@@ -67,6 +69,12 @@ public class UserConverter implements IObjectConverter<User, UserEO> {
 			communitiesEO.add(communityConverter.convertBOToEO(community));
 		}
 		userEO.setCommunities(communitiesEO);
+		MessageDigest m = MessageDigest.getInstance("MD5");
+		m.reset();
+		m.update(bo.getPassword().getBytes());
+		byte[] digest = m.digest();
+		userEO.setPassword(DigestUtils.md5DigestAsHex(digest));
+
 		LOGGER.info("Exiting convertBOToEO at {}", System.currentTimeMillis());
 		return userEO;
 	}
